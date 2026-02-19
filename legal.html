@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información Legal | Terraloop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terra: { dark: '#2C3E42', main: '#569E20', light: '#93C029' }
+                    },
+                    fontFamily: { sans: ['Inter', 'sans-serif'], heading: ['Outfit', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-terra-dark font-sans">
+    <nav class="bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html"><img src="assets/logo.png" alt="Logo" class="h-12"></a>
+            <a href="index.html" class="text-terra-main font-bold flex items-center"><i data-lucide="arrow-left"
+                    class="mr-2"></i> Volver</a>
+        </div>
+    </nav>
+    <div class="max-w-4xl mx-auto px-4 py-16">
+        <h1 class="text-4xl font-heading font-black text-terra-dark mb-8 border-b pb-4">Información Legal y Políticas
+        </h1>
+
+        <div id="privacidad" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-terra-main">Política de Privacidad</h2>
+            <p class="text-gray-600 mb-4">En TERRALOOP S.A.S. respetamos su privacidad. Esta política describe cómo
+                recopilamos, usamos y protegemos su información personal.</p>
+            <p class="text-gray-600">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <div id="terminos" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-terra-main">Términos y Condiciones</h2>
+            <p class="text-gray-600 mb-4">Al usar este sitio web, usted acepta cumplir con los siguientes términos y
+                condiciones de uso.</p>
+            <p class="text-gray-600">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                ex ea commodo consequat.</p>
+        </div>
+
+        <div id="datos" class="mb-12">
+            <h2 class="text-2xl font-bold mb-4 text-terra-main">Política de Datos (Habeas Data)</h2>
+            <p class="text-gray-600 mb-4">Cumplimos con la normativa vigente de protección de datos personales en
+                Colombia (Ley 1581 de 2012).</p>
+            <p class="text-gray-600">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur.</p>
+        </div>
+    </div>
+    <script>lucide.createIcons();</script>
+</body>
+
+</html>

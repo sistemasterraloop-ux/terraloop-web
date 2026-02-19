@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terraloop | Soluciones Ambientales y Calidad</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terra: {
+                            dark: '#2C3E42',
+                            main: '#569E20',
+                            light: '#93C029',
+                            pale: '#BAD181'
+                        },
+                        accent: {
+                            yellow: '#E5BA1D',
+                            orange: '#EA6518',
+                            red: '#C23017',
+                            brown: '#938755'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+
+        .hero-bg {
+            background-image: linear-gradient(rgba(44, 62, 66, 0.6), rgba(44, 62, 66, 0.3)), url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-terra-dark">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/95 backdrop-blur-sm shadow-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-24">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="assets/logo.png" alt="TERRALOOP Logo" class="h-16 md:h-20 w-auto object-contain">
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#inicio"
+                        class="text-terra-dark hover:text-terra-main font-semibold transition-colors">Inicio</a>
+                    <a href="#nosotros"
+                        class="text-terra-dark hover:text-terra-main font-semibold transition-colors">Nosotros</a>
+                    <a href="#servicios"
+                        class="text-terra-dark hover:text-terra-main font-semibold transition-colors">Servicios</a>
+                    <a href="#proyectos"
+                        class="text-terra-dark hover:text-terra-main font-semibold transition-colors">Proyectos</a>
+                    <a href="#contacto"
+                        class="text-terra-dark hover:text-terra-main font-semibold transition-colors">Contacto</a>
+                    <a href="pqrs.html"
+                        class="px-5 py-2.5 rounded-full bg-terra-main text-white hover:bg-terra-light transition-colors font-bold shadow-md hover:shadow-lg transform hover:-translate-y-0.5">P.Q.R.S</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-terra-dark hover:text-terra-main focus:outline-none p-2">
+                        <i data-lucide="menu" class="w-8 h-8"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 absolute w-full shadow-lg">
+            <div class="px-4 pt-2 pb-6 space-y-2 sm:px-3 flex flex-col items-center text-center">
+                <a href="#inicio"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-dark hover:text-terra-main hover:bg-gray-50">Inicio</a>
+                <a href="#nosotros"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-dark hover:text-terra-main hover:bg-gray-50">Nosotros</a>
+                <a href="#servicios"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-dark hover:text-terra-main hover:bg-gray-50">Servicios</a>
+                <a href="#proyectos"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-dark hover:text-terra-main hover:bg-gray-50">Proyectos</a>
+                <a href="#contacto"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-dark hover:text-terra-main hover:bg-gray-50">Contacto</a>
+                <a href="pqrs.html"
+                    class="block w-full px-3 py-3 rounded-md text-lg font-medium text-terra-main font-bold bg-gray-50 hover:bg-gray-100 mt-2">P.Q.R.S</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative items-center flex h-screen hero-bg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+            <h1
+                class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-none drop-shadow-xl">
+                Soluciones<br><span class="text-terra-light">Sostenibles</span>
+            </h1>
+            <p
+                class="mt-6 max-w-2xl mx-auto text-xl md:text-2xl text-gray-100 mb-10 drop-shadow-md font-light leading-relaxed">
+                Transformamos desafíos ambientales en oportunidades estratégicas. Calidad técnica y compromiso real.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#contacto"
+                    class="px-10 py-4 bg-terra-main text-white font-bold text-lg rounded-full shadow-xl hover:bg-terra-light hover:shadow-2xl transition-all transform hover:-translate-y-1 border-2 border-transparent">
+                    Solicitar Cotización
+                </a>
+                <a href="#contacto"
+                    class="px-10 py-4 bg-transparent border-2 border-white text-white font-bold text-lg rounded-full shadow-lg hover:bg-white hover:text-terra-dark transition-all transform hover:-translate-y-1backdrop-blur-sm">
+                    Contáctanos
+                </a>
+            </div>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <a href="#nosotros" class="text-white/80 hover:text-white transition-colors">
+                <i data-lucide="chevron-down" class="w-12 h-12"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Nosotros Section -->
+    <section id="nosotros" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div>
+                    <span
+                        class="text-terra-main font-bold tracking-widest uppercase text-sm mb-4 block border-l-4 border-terra-main pl-4">Quiénes
+                        Somos</span>
+                    <h2 class="text-4xl md:text-5xl font-black text-terra-dark mb-8 leading-tight">
+                        Aliados estratégicos para un <span class="text-terra-main">futuro responsable</span>
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed text-justify">
+                        En <strong>TERRALOOP S.A.S.</strong>, nos dedicamos a integrar la excelencia técnica con la
+                        responsabilidad ambiental. Somos una empresa joven, dinámica y altamente capacitada, enfocada en
+                        brindar soluciones que no solo cumplan con la normativa, sino que generen valor real a nuestros
+                        clientes.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed text-justify">
+                        Entendemos los retos de la industria moderna y ofrecemos un enfoque práctico, ágil y
+                        transparente.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start">
+                            <div
+                                class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-terra-pale/20 flex items-center justify-center text-terra-main">
+                                <i data-lucide="users" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-terra-dark">Equipo Experto</h4>
+                                <p class="text-sm text-gray-500">Profesionales multidisciplinarios.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div
+                                class="mt-1 flex-shrink-0 w-10 h-10 rounded-full bg-terra-pale/20 flex items-center justify-center text-terra-main">
+                                <i data-lucide="zap" class="w-5 h-5"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-terra-dark">Innovación</h4>
+                                <p class="text-sm text-gray-500">Tecnología aplicada a procesos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative group">
+                    <div
+                        class="absolute -top-6 -right-6 w-full h-full border-2 border-terra-main rounded-2xl z-0 transition-transform duration-500 group-hover:translate-x-2 group-hover:-translate-y-2">
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80"
+                        alt="Profesional Terraloop"
+                        class="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios Section -->
+    <section id="servicios" class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- Decoration -->
+        <div
+            class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-terra-main/30 to-transparent">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-20 max-w-3xl mx-auto">
+                <span class="text-terra-main font-bold tracking-widest uppercase text-sm mb-4 block">Nuestro
+                    Portafolio</span>
+                <h2 class="text-4xl md:text-5xl font-black text-terra-dark mb-6">
+                    Soluciones Técnicas Integrales
+                </h2>
+                <p class="text-xl text-gray-500 mb-8">
+                    Diseñamos e implementamos estrategias a medida para garantizar el cumplimiento normativo y la
+                    optimización operativa.
+                </p>
+                <a href="portafolio.html"
+                    class="inline-flex items-center px-8 py-3 border border-terra-main text-terra-main font-bold rounded-full hover:bg-terra-main hover:text-white transition-all duration-300">
+                    Ver Portafolio Completo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="h-64 overflow-hidden rounded-t-xl relative">
+                        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Estudios Ambientales"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
+                        <h3
+                            class="absolute bottom-6 left-6 text-2xl font-bold text-white group-hover:text-terra-light transition-colors">
+                            Estudios Ambientales</h3>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <p class="text-gray-600 mb-6 leading-relaxed line-clamp-4">
+                            Diagnósticos, estudios de impacto, planes de manejo y monitoreo. Todo lo necesario para
+                            licencias y cumplimiento.
+                        </p>
+                        <a href="portafolio.html"
+                            class="inline-flex items-center text-terra-main font-bold hover:text-terra-dark transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                            Ver detalles <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="h-64 overflow-hidden rounded-t-xl relative">
+                        <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Gestión y Trámites"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
+                        <h3
+                            class="absolute bottom-6 left-6 text-2xl font-bold text-white group-hover:text-terra-light transition-colors">
+                            Gestión y Trámites</h3>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <p class="text-gray-600 mb-6 leading-relaxed line-clamp-4">
+                            Permisos, licencias, planes de compensación y trámites de vertimientos. Gestionamos su
+                            relación con la autoridad ambiental.
+                        </p>
+                        <a href="portafolio.html"
+                            class="inline-flex items-center text-terra-main font-bold hover:text-terra-dark transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                            Ver detalles <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div
+                    class="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 group border border-gray-100 flex flex-col h-full">
+                    <div class="h-64 overflow-hidden rounded-t-xl relative">
+                        <!-- Updated Image for Ingeniería Sostenible -->
+                        <img src="https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                            alt="Ingeniería y Sostenibilidad"
+                            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-80"></div>
+                        <h3
+                            class="absolute bottom-6 left-6 text-2xl font-bold text-white group-hover:text-terra-light transition-colors">
+                            Ingeniería y Sostenibilidad</h3>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <p class="text-gray-600 mb-6 leading-relaxed line-clamp-4">
+                            Diseño de sistemas de tratamiento, eficiencia energética y gestión del riesgo. Soluciones
+                            técnicas para un futuro sostenible.
+                        </p>
+                        <a href="portafolio.html"
+                            class="inline-flex items-center text-terra-main font-bold hover:text-terra-dark transition-colors mt-auto group-hover:translate-x-2 duration-300">
+                            Ver detalles <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 md:hidden">
+                <a href="portafolio.html"
+                    class="inline-flex items-center px-8 py-3 border border-terra-main text-terra-main font-bold rounded-full hover:bg-terra-main hover:text-white transition-all duration-300">
+                    Ver Portafolio Completo <i data-lucide="arrow-right" class="ml-2 w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proyectos Section -->
+    <section id="proyectos" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-black tracking-tight text-terra-dark text-center mb-16">
+                Proyectos Destacados
+            </h2>
+
+            <div
+                class="flex flex-col lg:flex-row items-center gap-12 bg-gray-50 rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100">
+                <div class="w-full lg:w-1/2 h-80 lg:h-96 rounded-2xl overflow-hidden shadow-lg relative group">
+                    <img src="assets/GrupoAltavista.jpg" alt="Teatro Astor Plaza - Grupo Altavista"
+                        class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+                    <div
+                        class="absolute top-4 left-4 bg-terra-main text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                        En Ejecución
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <div class="flex items-center mb-6">
+                        <!-- Placeholder for Altavista Logo -->
+                        <div
+                            class="h-12 w-auto bg-gray-800 text-white px-4 flex items-center justify-center font-bold tracking-widest rounded-md mr-4">
+                            GRUPO ALTAVISTA
+                        </div>
+                        <span class="text-gray-400 text-sm font-medium">Aliado Estratégico</span>
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-terra-dark mb-4">Plan de Saneamiento Básico - Teatro Astor Plaza
+                    </h3>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Desarrollamos el plan integral de saneamiento para uno de los escenarios culturales más
+                        importantes de Bogotá. Actualmente, realizamos el seguimiento riguroso a su implementación,
+                        garantizando condiciones óptimas de salubridad y cumplimiento normativo.
+                    </p>
+
+                    <div class="bg-white p-6 rounded-xl border-l-4 border-terra-main shadow-sm mb-8">
+                        <p class="text-terra-dark italic font-medium">
+                            "La colaboración con el Grupo Altavista demuestra nuestra capacidad técnica y compromiso con
+                            grandes clientes corporativos."
+                        </p>
+                    </div>
+
+                    <a href="#contacto"
+                        class="text-terra-main font-bold hover:text-terra-dark border-b-2 border-terra-main pb-1 text-lg transition-colors">
+                        Consultar caso de éxito
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-center mt-16">
+                <a href="assets/portafolio.pdf" target="_blank"
+                    class="inline-flex items-center justify-center px-10 py-5 border-2 border-terra-dark text-lg font-bold rounded-full text-terra-dark hover:bg-terra-dark hover:text-white transition-all duration-300 transform hover:-translate-y-1 shadow-lg">
+                    Ver Portafolio Completo (PDF)
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Aliados / Confianza Section -->
+    <section class="py-16 bg-white border-t border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-gray-400 uppercase tracking-widest font-bold text-sm mb-8 block">Confían en
+                Nosotros</span>
+            <div
+                class="flex flex-wrap justify-center items-center gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <div class="text-3xl font-black text-gray-400 hover:text-terra-dark transition-colors cursor-default">
+                    GRUPO <span class="text-terra-main">ALTAVISTA</span></div>
+                <div class="text-3xl font-black text-gray-400 hover:text-terra-dark transition-colors cursor-default">
+                    TEATRO <span class="text-terra-light">ASTOR PLAZA</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto" class="py-24 bg-terra-dark text-white relative overflow-hidden">
+        <!-- Background Pattern -->
+        <div class="absolute inset-0 opacity-10"
+            style="background-image: url('data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cg fill=\'none\' fill-rule=\'evenodd\'%3E%3Cg fill=\'%23ffffff\' fill-opacity=\'1\'%3E%3Cpath d=\'M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z\'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="flex flex-col justify-center">
+                    <span class="text-terra-main font-bold tracking-widest uppercase text-sm mb-4 block">Contacto
+                        Comercial</span>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">¿Listo para optimizar su
+                        gestión ambiental?</h2>
+                    <p class="text-gray-300 mb-10 text-xl leading-relaxed font-light">
+                        Contáctenos hoy mismo para una consultoría personalizada. Respondemos en menos de 24 horas.
+                    </p>
+
+                    <div class="space-y-8 mb-12">
+                        <div
+                            class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors border border-white/10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-terra-main text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg">
+                                <i data-lucide="phone" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 text-gray-200">Llámenos (Cel/WhatsApp)</h4>
+                                <a href="tel:+573173736553"
+                                    class="text-2xl font-bold text-white hover:text-terra-pale transition-colors">(+57)
+                                    317 373 6553</a>
+                            </div>
+                        </div>
+                        <div
+                            class="flex items-center p-4 bg-white/5 rounded-xl hover:bg-white/10 transition-colors border border-white/10">
+                            <div
+                                class="w-14 h-14 rounded-full bg-terra-main text-white flex items-center justify-center mr-6 flex-shrink-0 shadow-lg">
+                                <i data-lucide="mail" class="w-7 h-7"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1 text-gray-200">Envíenos un Correo</h4>
+                                <a href="mailto:comercial.terraloop@gmail.com"
+                                    class="text-xl font-medium text-white hover:text-terra-pale transition-colors break-all">comercial.terraloop@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div
+                    class="bg-white rounded-3xl p-8 lg:p-12 shadow-2xl transform lg:translate-y-12 border-t-8 border-terra-main">
+                    <h3 class="text-2xl font-bold text-terra-dark mb-6">Envíenos un mensaje</h3>
+                    <form action="mensaje_enviado.html">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" for="name">Nombre</label>
+                                <input
+                                    class="w-full px-4 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-terra-main focus:ring-4 focus:ring-terra-main/10 transition-all font-medium text-gray-900"
+                                    type="text" id="name" placeholder="Su nombre">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-bold text-gray-700 mb-2" for="phone">Teléfono</label>
+                                <input
+                                    class="w-full px-4 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-terra-main focus:ring-4 focus:ring-terra-main/10 transition-all font-medium text-gray-900"
+                                    type="tel" id="phone" placeholder="Su número de contacto">
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-sm font-bold text-gray-700 mb-2" for="email">Correo
+                                Corporativo</label>
+                            <input
+                                class="w-full px-4 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-terra-main focus:ring-4 focus:ring-terra-main/10 transition-all font-medium text-gray-900"
+                                type="email" id="email" placeholder="nombre@empresa.com">
+                        </div>
+                        <div class="mb-8">
+                            <label class="block text-sm font-bold text-gray-700 mb-2" for="message">Detalles del
+                                Proyecto</label>
+                            <textarea
+                                class="w-full px-4 py-4 rounded-xl bg-gray-50 border border-gray-200 focus:outline-none focus:border-terra-main focus:ring-4 focus:ring-terra-main/10 transition-all font-medium text-gray-900"
+                                id="message" rows="4" placeholder="Describa brevemente sus necesidades..."></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-terra-main text-white font-bold py-5 rounded-xl hover:bg-terra-light transition-all shadow-xl transform hover:-translate-y-1 active:scale-[0.99] duration-200 text-lg flex justify-center items-center">
+                            Solicitar Cotización <i data-lucide="send" class="ml-3 w-5 h-5"></i>
+                        </button>
+                        <p class="text-xs text-gray-400 mt-4 text-center">Al enviar este formulario, acepta nuestra
+                            política de tratamiento de datos.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PQRS Section -->
+    <section id="pqrs" class="py-24 bg-gray-50 border-t border-gray-200 mt-20 lg:mt-0">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <div
+                class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-white shadow-md text-terra-dark mb-8">
+                <i data-lucide="file-text" class="w-10 h-10 text-terra-main"></i>
+            </div>
+            <h2 class="text-3xl font-bold text-terra-dark mb-4">Canal de Atención al Usuario (P.Q.R.S)</h2>
+            <p class="text-gray-600 mb-10 text-lg max-w-2xl mx-auto">
+                Para TERRALOOP es fundamental escuchar a nuestros grupos de interés. Utilice este canal para radicar
+                Peticiones, Quejas, Reclamos o Sugerencias.
+            </p>
+            <a href="pqrs.html"
+                class="inline-flex items-center px-12 py-5 bg-terra-dark text-white rounded-full hover:bg-gray-800 transition-all font-bold shadow-lg hover:shadow-xl transform hover:-translate-y-1 text-lg">
+                Radicar Solicitud
+                <i data-lucide="external-link" class="ml-3 w-6 h-6"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-24 pb-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-1 lg:col-span-2 pr-8">
+                    <img src="assets/logo.png" alt="TERRALOOP Logo"
+                        class="h-12 w-auto mb-6 brightness-0 invert opacity-90">
+                    <p class="text-gray-400 max-w-md mb-8 leading-relaxed font-light text-sm">
+                        Somos una empresa colombiana comprometida con el desarrollo sostenible. Brindamos servicios de
+                        ingeniería ambiental y sanitaria con los más altos estándares de calidad.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors transform hover:scale-110"><i
+                                data-lucide="facebook" class="w-6 h-6"></i></a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors transform hover:scale-110"><i
+                                data-lucide="instagram" class="w-6 h-6"></i></a>
+                        <a href="#"
+                            class="text-gray-400 hover:text-white transition-colors transform hover:scale-110"><i
+                                data-lucide="linkedin" class="w-6 h-6"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-8 text-white uppercase tracking-widest text-xs">Navegación</h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="#inicio"
+                                class="text-gray-400 hover:text-terra-main transition-colors flex items-center group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 mr-2 text-terra-dark group-hover:text-terra-main"></i> Inicio</a>
+                        </li>
+                        <li><a href="#nosotros"
+                                class="text-gray-400 hover:text-terra-main transition-colors flex items-center group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 mr-2 text-terra-dark group-hover:text-terra-main"></i> Nosotros</a>
+                        </li>
+                        <li><a href="#servicios"
+                                class="text-gray-400 hover:text-terra-main transition-colors flex items-center group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 mr-2 text-terra-dark group-hover:text-terra-main"></i> Servicios</a>
+                        </li>
+                        <li><a href="#proyectos"
+                                class="text-gray-400 hover:text-terra-main transition-colors flex items-center group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-4 h-4 mr-2 text-terra-dark group-hover:text-terra-main"></i> Proyectos</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-8 text-white uppercase tracking-widest text-xs">Información Legal
+                    </h4>
+                    <ul class="space-y-4 text-sm font-medium">
+                        <li><a href="legal.html#privacidad"
+                                class="text-gray-400 hover:text-terra-main transition-colors">Política de
+                                Privacidad</a></li>
+                        <li><a href="legal.html#terminos"
+                                class="text-gray-400 hover:text-terra-main transition-colors">Términos y
+                                Condiciones</a></li>
+                        <li><a href="legal.html#datos"
+                                class="text-gray-400 hover:text-terra-main transition-colors">Política de Datos
+                                (Habeas Data)</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-gray-500 text-xs uppercase tracking-wider">
+                <p>&copy; 2025 TERRALOOP S.A.S. Todos los derechos reservados.</p>
+                <p class="mt-4 md:mt-0 flex items-center">Desarrollado con estándares de calidad</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JS -->
+    <script src="js/config.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quote-form.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
+</body>
+
+</html>

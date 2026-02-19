@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio de Servicios | Terraloop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@400;700;900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        terra: {
+                            dark: '#2C3E42',
+                            main: '#569E20',
+                            light: '#93C029',
+                            pale: '#BAD181'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-gray-50 text-terra-dark">
+
+    <!-- Header similar to main page but simplified -->
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center">
+                    <img src="assets/logo.png" alt="TERRALOOP Logo" class="h-12 w-auto">
+                </a>
+                <a href="index.html#contacto"
+                    class="text-terra-main font-bold hover:text-terra-dark transition-colors flex items-center">
+                    <i data-lucide="arrow-left" class="mr-2 w-5 h-5"></i> Volver al Inicio
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Hero -->
+    <div class="bg-terra-dark text-white py-16 relative overflow-hidden">
+        <div
+            class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')] bg-cover bg-center">
+        </div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-black mb-4">Portafolio de Servicios</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mx-auto">Soluciones integrales diseñadas para el cumplimiento
+                normativo y la sostenibilidad ambiental.</p>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+        <!-- ESTUDIOS AMBIENTALES -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-8 border-terra-main">
+            <h2 class="text-3xl font-bold text-terra-dark mb-8 flex items-center">
+                <i data-lucide="file-search" class="w-10 h-10 text-terra-main mr-4"></i> Estudios Ambientales
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-terra-light mt-1 mr-3 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Diagnóstico Ambiental de Alternativas (DAA)</h3>
+                            <p class="text-gray-600 text-sm">Evaluación y comparación de opciones para la ejecución de
+                                proyectos, optimizando el manejo de impactos.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-terra-light mt-1 mr-3 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Estudios de Impacto Ambiental (EIA)</h3>
+                            <p class="text-gray-600 text-sm">Identificación y valoración de impactos potenciales para la
+                                obtención de licencias ambientales.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-terra-light mt-1 mr-3 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Planes de Manejo Ambiental (PMA)</h3>
+                            <p class="text-gray-600 text-sm">Diseño de medidas de prevención, mitigación, corrección y
+                                compensación de impactos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-terra-light mt-1 mr-3 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Informes de Cumplimiento Ambiental (ICA)</h3>
+                            <p class="text-gray-600 text-sm">Auditorías y reportes técnicos para demostrar el
+                                cumplimiento ante autoridades.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-terra-light mt-1 mr-3 flex-shrink-0"></i>
+                        <div>
+                            <h3 class="font-bold text-lg">Seguimiento y monitoreo ambiental</h3>
+                            <p class="text-gray-600 text-sm">Control continuo de variables ambientales para asegurar la
+                                sostenibilidad del proyecto.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GESTIÓN Y TRÁMITES -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-8 border-terra-light">
+            <h2 class="text-3xl font-bold text-terra-dark mb-8 flex items-center">
+                <i data-lucide="clipboard-check" class="w-10 h-10 text-terra-light mr-4"></i> Gestión y Trámites
+                Ambientales
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-terra-main mt-1 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Permisos y licencias ambientales (ANLA, CAR,
+                                alcaldías, planes arqueológicos)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-terra-main mt-1 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Planes de compensación ambiental</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="space-y-4">
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-terra-main mt-1 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Programa de Uso Eficiente y Ahorro del Agua
+                                (PUEAA)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="chevron-right" class="w-5 h-5 text-terra-main mt-1 mr-2"></i>
+                            <span class="text-gray-700 font-medium">Trámites de vertimientos, emisiones, concesiones de
+                                agua y aprovechamiento forestal</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- GESTIÓN DEL RIESGO -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-8 border-yellow-500">
+            <h2 class="text-3xl font-bold text-terra-dark mb-8 flex items-center">
+                <i data-lucide="shield-alert" class="w-10 h-10 text-yellow-500 mr-4"></i> Gestión del Riesgo de
+                Desastres
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-700">
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-terra-dark">Identificación y evaluación de amenazas</h3>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-terra-dark">Formulación de planes de prevención, mitigación y contingencia
+                    </h3>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-terra-dark">Implementación de planes de gestión del riesgo</h3>
+                </div>
+                <div class="p-4 bg-gray-50 rounded-lg">
+                    <h3 class="font-bold text-terra-dark">Capacitación y simulacros</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Columns for Remaining Sections -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- SOSTENIBILIDAD -->
+            <section class="bg-white rounded-2xl shadow-lg p-8 border-t-8 border-terra-main">
+                <h3 class="text-2xl font-bold text-terra-dark mb-6 flex items-center">
+                    <i data-lucide="globe" class="w-8 h-8 text-terra-main mr-3"></i> Sostenibilidad y Cambio Climático
+                </h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center"><span
+                            class="w-2 h-2 bg-terra-main rounded-full mr-3"></span>Inventarios de Gases de Efecto
+                        Invernadero (GEI)</li>
+                    <li class="flex items-center"><span class="w-2 h-2 bg-terra-main rounded-full mr-3"></span>Planes de
+                        adaptación y mitigación al cambio climático</li>
+                </ul>
+            </section>
+
+            <!-- EDUCACIÓN -->
+            <section class="bg-white rounded-2xl shadow-lg p-8 border-t-8 border-terra-light">
+                <h3 class="text-2xl font-bold text-terra-dark mb-6 flex items-center">
+                    <i data-lucide="users" class="w-8 h-8 text-terra-light mr-3"></i> Educación Ambiental
+                </h3>
+                <ul class="space-y-3 text-gray-600">
+                    <li class="flex items-center"><span class="w-2 h-2 bg-terra-light rounded-full mr-3"></span>Talleres
+                        y capacitaciones</li>
+                    <li class="flex items-center"><span
+                            class="w-2 h-2 bg-terra-light rounded-full mr-3"></span>Sensibilización comunitaria</li>
+                    <li class="flex items-center"><span
+                            class="w-2 h-2 bg-terra-light rounded-full mr-3"></span>Educación ambiental empresarial</li>
+                </ul>
+            </section>
+        </div>
+
+        <!-- ORDENAMIENTO -->
+        <section class="bg-white rounded-2xl shadow-lg p-8 md:p-12 border-l-8 border-terra-dark">
+            <h2 class="text-3xl font-bold text-terra-dark mb-8 flex items-center">
+                <i data-lucide="map" class="w-10 h-10 text-terra-dark mr-4"></i> Ordenamiento Territorial y Conservación
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Items -->
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="tree-pine" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Planes de manejo de áreas protegidas</span>
+                </div>
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="droplet" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Evaluación de servicios ecosistémicos</span>
+                </div>
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="sprout" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Restauración ecológica y reforestación</span>
+                </div>
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="leaf" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Compensación por pérdida de biodiversidad</span>
+                </div>
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="zap" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Proyectos energéticos sostenibles</span>
+                </div>
+                <div class="flex items-center p-3 border border-gray-100 rounded-lg">
+                    <i data-lucide="layers" class="w-5 h-5 text-terra-main mr-3"></i>
+                    <span class="text-sm font-medium">Estudios hidrológicos y geotécnicos</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Final -->
+        <section class="bg-terra-main rounded-3xl p-12 text-center text-white">
+            <h2 class="text-3xl font-bold mb-4">¿Necesita un servicio específico?</h2>
+            <p class="text-xl opacity-90 mb-8">Nuestro equipo de expertos está listo para asesorarlo en cualquiera de
+                estas áreas.</p>
+            <a href="index.html#contacto"
+                class="inline-block bg-white text-terra-main font-bold py-4 px-10 rounded-full hover:bg-gray-100 transition-colors shadow-lg">
+                Contáctenos Ahora
+            </a>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-terra-dark text-white py-8 mt-12 text-center border-t border-gray-800">
+        <p class="text-sm opacity-60">&copy; 2025 TERRALOOP S.A.S. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
