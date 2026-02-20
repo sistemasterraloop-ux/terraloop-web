@@ -3,6 +3,7 @@ const nodemailer = require('nodemailer');
 // Configuración del transporter
 // Se asume uso de servicio SMTP genérico o Gmail (requiere App Password)
 // Configuración del transporter - INTENTO FINAL ROBUSTO
+// Configuración del transporter - INTENTO FINAL ROBUSTO
 const transporter = nodemailer.createTransport({
     service: 'gmail', // Usar configuración predefinida de Google
     auth: {
@@ -10,13 +11,33 @@ const transporter = nodemailer.createTransport({
         pass: process.env.EMAIL_PASS
     },
     // Timeouts EXTREMOS para contenedores lentos
-    connectionTimeout: 60000, // 60 segundos de espera
+    connectionTimeout: 60000,
     greetingTimeout: 30000,
     socketTimeout: 60000,
-    // Logs detallados para entender qué pasa
     logger: true,
     debug: true
 });
+
+/**
+ * Función auxiliar para reintentar envío de correos ante fallos de conexión
+ * @param {Object} mailOptions 
+ * @param {number} retries 
+ */
+async function sendMailWithRetry(mailOptions, retries = 3) {
+    for (let i = 0; i < retries; i++) {
+        try {
+            console.log(`Intento de envío ${i + 1}/${retries}...`);
+            await transporter.sendMail(mailOptions);
+            console.log('Envío exitoso.');
+            return;
+        } catch (error) {
+            console.error(`Fallo en intento ${i + 1}:`, error.message);
+            if (i === retries - 1) throw error; // Si es el último intento, lanzar error
+            // Esperar 2 segundos antes de reintentar
+            await new Promise(resolve => setTimeout(resolve, 2000));
+        }
+    }
+}
 
 /**
  * Envía el correo de solicitud de cotización
