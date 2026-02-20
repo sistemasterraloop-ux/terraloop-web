@@ -6,16 +6,20 @@ const nodemailer = require('nodemailer');
 // Usamos configuración explícita para evitar problemas de conexión en la nube (Render)
 const transporter = nodemailer.createTransport({
     host: 'smtp.gmail.com',
-    port: 465,
-    secure: true, // true para puerto 465, false para otros
+    port: 587, // Cambiamos a puerto 587 (TLS oportunista) que suele ser más compatible
+    secure: false, // true para 465, false para otros
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-    // Opciones adicionales para evitar errores de certificado en algunos entornos
+    // Opciones adicionales críticas para entornos Cloud (Render):
     tls: {
         rejectUnauthorized: false
-    }
+    },
+    family: 4, // FORZAR IPv4 (Evita problemas de resolución IPv6 con Gmail)
+    connectionTimeout: 10000, // 10 segundos
+    greetingTimeout: 10000,
+    socketTimeout: 10000
 });
 
 /**
