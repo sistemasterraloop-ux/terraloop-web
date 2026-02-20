@@ -2,24 +2,20 @@ const nodemailer = require('nodemailer');
 
 // Configuración del transporter
 // Se asume uso de servicio SMTP genérico o Gmail (requiere App Password)
-// Configuración del transporter
-// Usamos configuración explícita para evitar problemas de conexión en la nube (Render)
+// Configuración del transporter - INTENTO FINAL ROBUSTO
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587, // Cambiamos a puerto 587 (TLS oportunista) que suele ser más compatible
-    secure: false, // true para 465, false para otros
+    service: 'gmail', // Usar configuración predefinida de Google
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
     },
-    // Opciones adicionales críticas para entornos Cloud (Render):
-    tls: {
-        rejectUnauthorized: false
-    },
-    family: 4, // FORZAR IPv4 (Evita problemas de resolución IPv6 con Gmail)
-    connectionTimeout: 10000, // 10 segundos
-    greetingTimeout: 10000,
-    socketTimeout: 10000
+    // Timeouts EXTREMOS para contenedores lentos
+    connectionTimeout: 60000, // 60 segundos de espera
+    greetingTimeout: 30000,
+    socketTimeout: 60000,
+    // Logs detallados para entender qué pasa
+    logger: true,
+    debug: true
 });
 
 /**
