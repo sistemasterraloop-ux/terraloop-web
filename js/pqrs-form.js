@@ -1,7 +1,7 @@
 // Manejo del formulario PQRS
 document.addEventListener('DOMContentLoaded', () => {
     const pqrsForm = document.querySelector('form[action="mensaje_enviado.html"]');
-    const backendUrl = `${CONFIG.API_BASE_URL}/pqrs`;
+    const backendUrl = `${CONFIG.API_BASE_URL}/api/pqrs`;
 
     if (pqrsForm) {
         pqrsForm.addEventListener('submit', async (e) => {

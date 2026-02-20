@@ -1,7 +1,7 @@
 // Manejo del formulario de cotización
 document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.querySelector('#contacto form');
-    const backendUrl = `${CONFIG.API_BASE_URL}/quote`;
+    const backendUrl = `${CONFIG.API_BASE_URL}/api/quote`;
 
     if (contactForm) {
         contactForm.addEventListener('submit', async (e) => {
