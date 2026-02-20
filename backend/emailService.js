@@ -2,11 +2,19 @@ const nodemailer = require('nodemailer');
 
 // Configuración del transporter
 // Se asume uso de servicio SMTP genérico o Gmail (requiere App Password)
+// Configuración del transporter
+// Usamos configuración explícita para evitar problemas de conexión en la nube (Render)
 const transporter = nodemailer.createTransport({
-    service: process.env.EMAIL_SERVICE || 'gmail',
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, // true para puerto 465, false para otros
     auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
+    },
+    // Opciones adicionales para evitar errores de certificado en algunos entornos
+    tls: {
+        rejectUnauthorized: false
     }
 });
 
